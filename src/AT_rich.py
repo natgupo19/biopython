@@ -38,6 +38,7 @@ SEE ALSO
 import argparse
 import re 
 
+# Agregar el parser
 parser = argparse.ArgumentParser(description = "Buscar regiones ricas en AT")
 
 parser.add_argument("-f", "--file",
@@ -52,21 +53,27 @@ parser.add_argument("-s", "--size",
                                         
 args = parser.parse_args()
 
+# Abrir el archivo
 with open(args.file, 'r') as sequence:
     dna = sequence.read().upper()
 
+# Crear la funcion para validar la secuencia
 def validate(dna):
-    invalid = re.finditer("[^ATCG+]", dna)
+    # Buscar los caracteres invalidos y contarlos
+    invalid = re.finditer("[^ATCG]", dna)
     match = len([*invalid]) 
     if not match:
         return(1)
+    # Notificar el error si es que se encuentran caracteres invalidos
     if match:
-        invalid = re.finditer("[^ATCG+]", dna)
+        invalid = re.finditer("[^ATCG]", dna)
         for error in invalid:
             print (f"\nSe encontaro un caracter invalido: {error.group()} en la posicion {error.span()}\n")
         return(0)
-    
+ 
+# Crear la funcion que busca regiones ricas en AT   
 def at_regions(dna, at = 13):
+    # Buscar regiones ricas en AT
     at_rich = re.finditer("([AT]+)", dna)
     match_2 = len([*at_rich])
     if match_2:
@@ -74,9 +81,11 @@ def at_regions(dna, at = 13):
         for regions in at_rich:
             if len(regions.group()) >= at:
                 print(f"\nSe encontro la region rica en AT: {regions.group()} en la posicion {regions.span()}\n")
+    # Si no se encuentran, notificar que no hay regiones ricas en AT
     else:
         print("\nNo se encontraron regiones ricas en AT\n")
-            
+
+# Imprimir los resultados al usuario          
 if validate(dna):
     if args.size:
         result = at_regions(dna, args.size)
