@@ -2,7 +2,7 @@
 
 ## Description
 
-Repositorio perteneciente a la clase de PYTHON para almacenar datos, tareas, scripts, prácticas y proyectos creados para la misma.
+Repositorio perteneciente a la clase de BIOPYTHON para almacenar datos, tareas, scripts, prácticas y proyectos creados para la misma.
 
 
 
