@@ -89,7 +89,6 @@ def at_regions(dna, at = 13):
 if validate(dna):
     if args.size:
         result = at_regions(dna, args.size)
-    
     else:
         result = at_regions(dna)
         
