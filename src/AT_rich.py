@@ -12,7 +12,7 @@ GITHUB
     https://github.com/natgupo19/biopython
     
 DESCRIPTION
-    Programa que identidica las regiones ricas en AT de 
+    Programa que identifica las regiones ricas en AT de 
     un archivo con una secuencia de DNA
 
 CATEGORY
@@ -59,6 +59,14 @@ with open(args.file, 'r') as sequence:
 
 # Crear la funcion para validar la secuencia
 def validate(dna):
+    '''
+    Evalua si el archivo contiene algun caracter que no sea un nucleotido
+        Parameters:
+            dna (str): secuencia de DNA a analizar
+        Returns:
+            0 (int): si la secuencia es incorrecta
+            1 (int): si la secuencia es correcta
+    '''
     # Buscar los caracteres invalidos y contarlos
     invalid = re.finditer("[^ATCG]", dna)
     match = len([*invalid]) 
@@ -68,11 +76,17 @@ def validate(dna):
     if match:
         invalid = re.finditer("[^ATCG]", dna)
         for error in invalid:
-            print (f"\nSe encontaro un caracter invalido: {error.group()} en la posicion {error.span()}\n")
+            print (f"\nSe encontro un caracter invalido: {error.group()} en la posicion {error.span()}\n")
         return(0)
  
 # Crear la funcion que busca regiones ricas en AT   
 def at_regions(dna, at = 13):
+    '''
+    Busca regiones ricas en AT en una secuencia de DNA
+        Parameters:
+            dna (str): secuencia de DNA a analizar
+            at (int): tamaño minimo de las regiones ricas en AT, por default 13
+    '''
     # Buscar regiones ricas en AT
     at_rich = re.finditer("([AT]+)", dna)
     match_2 = len([*at_rich])
@@ -84,6 +98,7 @@ def at_regions(dna, at = 13):
     # Si no se encuentran, notificar que no hay regiones ricas en AT
     else:
         print("\nNo se encontraron regiones ricas en AT\n")
+        
 
 # Imprimir los resultados al usuario          
 if validate(dna):
