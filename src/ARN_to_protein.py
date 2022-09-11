@@ -62,7 +62,7 @@ args = parser.parse_args()
 # Si el usuario ingresa un archivo, leemos la secuencia
 if args.file:
     with open(args.file, 'r') as sequence:
-        rna = sequence.read().upper()
+        rna = sequence.read().rstrip('\n').upper()
 
 # Si el usuario inserta una secuencia de RNA
 if args.sequence:
