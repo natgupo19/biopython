@@ -55,7 +55,7 @@ args = parser.parse_args()
 
 # Abrir el archivo
 with open(args.file, 'r') as sequence:
-    dna = sequence.read().upper()
+    dna = sequence.read().rstrip('\n').upper()
 
 # Crear la funcion para validar la secuencia
 def validate(dna):
