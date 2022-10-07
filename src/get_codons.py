@@ -42,7 +42,7 @@ import argparse
 import re
 
 # Agregar el parser
-parser = argparse.ArgumentParser(description = "Obtener secuencia proteíca con mas aminoacidos")
+parser = argparse.ArgumentParser(description = "Obtener secuencia proteica con mas aminoacidos")
 
 parser.add_argument("-f", "--file",
                     metavar="path/to/file",
