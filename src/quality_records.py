@@ -43,7 +43,7 @@ from Bio import SeqIO
 import argparse
 
 # Agregar el parser
-parser = argparse.ArgumentParser(description = "Obtener secuencia proteica con mas aminoacidos")
+parser = argparse.ArgumentParser(description = "Obtener secuencias que superen el umbral de calidad")
 
 parser.add_argument("-f", "--Fastq",
                     metavar="path/to/file",
