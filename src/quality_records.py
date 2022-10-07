@@ -95,6 +95,6 @@ def umbral_quality(archivo, umbral):
 # Llamar a la funcion 
 total_records = umbral_quality(args.Fastq, args.umbral)
 
-# Imprimir los datos y el path del archivo
+# Imprimir el numero de lecturas encontradas y el path del archivo output
 print(f"\n{total_records}")
 print(f"Los datos se encuentran en el archivo: {args.output}\n")
