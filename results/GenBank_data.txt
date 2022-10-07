@@ -1,0 +1,23 @@
+Annotations:
+
+Name:
+	NC_020806
+
+Date:
+	13-AUG-2018
+
+Organism:
+	Isfahan virus
+
+
+Features:
+
+Country:
+	['Iran:Isfahan province']
+
+Molecular Type:
+	['genomic RNA']
+
+Isolation Source:
+	['Phlebotomus papatasi']
+
