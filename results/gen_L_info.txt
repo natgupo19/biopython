@@ -1,0 +1,29 @@
+DATABANK FILE INFO:
+
+Organism:
+	Isfahan virus
+
+Date:
+	13-AUG-2018
+
+Country:
+	['Iran:Isfahan province']
+
+Isolation Source:
+	['Phlebotomus papatasi']
+
+
+GENES INFO:
+
+Gen:
+	L
+
+	DNA:
+		ATGGATGAGTACTCT
+
+	RNA:
+		AUGGAUGAGUACUCU
+
+	Protein:
+		MDEYS
+
