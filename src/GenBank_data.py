@@ -23,7 +23,7 @@ USAGE
     
 ARGUMENTS
     -h, --help          Show this help message and exit
-    -f FASTQ, --Fastq FASTQ
+    -f FILE, --file FILE
                         GenBank file
     -o OUTPUT, --output OUTPUT
                         Output file
