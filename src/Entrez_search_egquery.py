@@ -35,7 +35,7 @@ from Bio import Entrez
 import argparse
 
 # Agregamos el parser
-parser = argparse.ArgumentParser(description="")
+parser = argparse.ArgumentParser(description="Obtener IDs de las bases de datos donde se encuentre la informacion dada")
 
 parser.add_argument("-t", "--term",
                     help="Introduzca el organismo y los genes en el siguiente formato: 'Organismo1: Gene1, Gene2; Organismo2: Gene3, Gene4...'",
@@ -136,5 +136,5 @@ def term_ids(terms, path):
 
 # Llamar a las funciones y obtener el archivo output
 termino = create_term(args.term)
-data_bases = term_ids(termino, args.output) 
-                
+data_bases = term_ids(termino, args.output)
+
