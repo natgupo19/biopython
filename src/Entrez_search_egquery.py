@@ -95,7 +95,6 @@ def term_ids(terms, path):
     # Abrir el archivo que contendra la informacion
     with open(path, "w") as file:
         for termino in terms:
-            file.write("\n")
             organism = termino.split("[Orgn]")
             organism = organism[0]
             
@@ -104,7 +103,7 @@ def term_ids(terms, path):
             record = Entrez.read(handle)
             
             # Escribir el nombre del organismo en el archivo
-            file.write(f"{organism}\n")
+            file.write(f"*{organism}\n")
             
             # Inicializar el vector donde se guardaran las bases de datos
             dbases = []
@@ -131,7 +130,7 @@ def term_ids(terms, path):
                 db_ids = db_id + str(ids).replace('[', '').replace(']', '').replace("'", "")
                 
                 # Escribir la informacion en el archivo
-                file.write(f"\n{db_ids}\n")
+                file.write(f"{db_ids}\n")
     return()
 
 # Llamar a las funciones y obtener el archivo output
