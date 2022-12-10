@@ -12,7 +12,7 @@ GITHUB
     https://github.com/natgupo19/biopython
     
 DESCRIPTION
-    
+    Solucion de los ejercicios vistos en clase con ayuda de numpy
 
 CATEGORY 
     BioPython
